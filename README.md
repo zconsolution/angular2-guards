@@ -1,7 +1,5 @@
 # Angular2guards
 
-This project was generated with Angular CLI version 1.0.0-beta.32.3.
-
 Installation :
 
 This project used node version 6.9.2

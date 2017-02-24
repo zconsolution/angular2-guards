@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { AuthService } from '../auth/auth.service';
 
 @Component({
     templateUrl: 'login.component.html',
@@ -6,4 +10,34 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+    private user: any = { username: '', password: ''};
+    private loginAs: any = '';
+
+    constructor(private authService: AuthService, private router: Router) {
+        this.user.username = 'user';
+        this.user.password = 'user';
+        this.loginAs = 'user';
+    }
+
+    onSubmit(form: NgForm, event) {
+        if (this.loginAs === 'user') {
+            this.authService.isSignIn = true;
+            this.authService.isUserRole = true;
+            this.authService.isAdminRole = false;
+        } else if (this.loginAs === 'admin') {
+            this.authService.isSignIn = true;
+            this.authService.isAdminRole = true;
+            this.authService.isUserRole = false;
+        }
+        this.router.navigate(['home']);
+    }
+    loginBy() {
+        if (this.loginAs === 'user') {
+            this.user.username = 'user';
+            this.user.password = 'user';
+        } else if (this.loginAs === 'admin') {
+            this.user.username = 'admin';
+            this.user.password = 'admin';
+        }
+    }
 }

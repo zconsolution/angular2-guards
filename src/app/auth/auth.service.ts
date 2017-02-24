@@ -4,21 +4,28 @@ import {Injectable} from '@angular/core';
 export class AuthService {
 
   // this login service is used to check user is logged in or not
-  constructor() {}
+  public isSignIn: boolean;
+  public isUserRole: boolean;
+  public isAdminRole: boolean;
+  constructor() {
+     this.isSignIn = false;
+     this.isUserRole = false;
+     this.isAdminRole = false;
+  }
 
   isLoggedIn(): boolean {
     // check use is logged in or not
-    return true;
+    return this.isSignIn;
   }
 
   isUser(): boolean {
     // check use has user role or not
-    return true;
+    return this.isUserRole;
   }
 
   isAdmin(): boolean {
     // check use  has admin role or not
-    return false;
+    return this.isAdminRole;
   }
 }
 

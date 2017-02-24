@@ -17,6 +17,9 @@ export class LoginComponent {
         this.user.username = 'user';
         this.user.password = 'user';
         this.loginAs = 'user';
+        if (this.authService.isSignIn) {
+            this.router.navigate(['home']);
+        }
     }
 
     onSubmit(form: NgForm, event) {

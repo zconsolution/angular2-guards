@@ -17,20 +17,18 @@ export class LoginComponent {
         this.user.username = 'user';
         this.user.password = 'user';
         this.loginAs = 'user';
-        if (this.authService.isSignIn) {
+        if (this.authService.isLoggedIn()) {
             this.router.navigate(['home']);
         }
     }
 
     onSubmit(form: NgForm, event) {
         if (this.loginAs === 'user') {
-            this.authService.isSignIn = true;
-            this.authService.isUserRole = true;
-            this.authService.isAdminRole = false;
+            this.authService.setLogin();
+            this.authService.setRole('user');
         } else if (this.loginAs === 'admin') {
-            this.authService.isSignIn = true;
-            this.authService.isAdminRole = true;
-            this.authService.isUserRole = false;
+            this.authService.setLogin();
+            this.authService.setRole('admin');
         }
         this.router.navigate(['home']);
     }

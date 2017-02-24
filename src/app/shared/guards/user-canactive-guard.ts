@@ -11,6 +11,7 @@ export class UserGuard implements CanActivate {
     if (!this.authService.isUser()) {
       // navigate to login page if role is not user
       alert('Please login as User role');
+      this.authService.clearAll();
       this.router.navigate(['/login']);
       return false;
     };

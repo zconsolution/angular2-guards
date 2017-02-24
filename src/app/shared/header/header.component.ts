@@ -14,8 +14,8 @@ export class HeaderComponent {
 
     }
 
-    logout() {
-        this.authService.isSignIn = false;
+    logout() {;
+        this.authService.clearAll();
         this.router.navigate(['login']);
     }
 }

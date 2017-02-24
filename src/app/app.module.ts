@@ -1,9 +1,11 @@
+// 3'rd party modules and services
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routes';
 
+// application components and services
 import { HomeComponent } from './home/home.component';
 import { PaymentComponent } from './payment/payment.component';
 import { TransactionComponent } from './transaction/transaction.component';
@@ -16,7 +18,7 @@ import { AdminGuard } from './shared/guards/admin-canactive-guard';
 import { AuthService } from './auth/auth.service';
 import { AppComponent } from './app.component';
 
-
+// application main module
 @NgModule({
   declarations: [
     AppComponent,

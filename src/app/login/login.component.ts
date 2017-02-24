@@ -32,6 +32,7 @@ export class LoginComponent {
         }
         this.router.navigate(['home']);
     }
+
     loginBy() {
         if (this.loginAs === 'user') {
             this.user.username = 'user';

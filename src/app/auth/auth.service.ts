@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 
+// this login service is used to check user is logged in or not
 @Injectable()
 export class AuthService {
 
-  // this login service is used to check user is logged in or not
   constructor() {}
 
   setLogin() {
@@ -19,7 +19,7 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    // check use is logged in or not
+    // check If user is loggedIn or not
     if (localStorage.getItem('isSignIn')) {
         return true;
     } else {
@@ -28,7 +28,7 @@ export class AuthService {
   }
 
   isUser(): boolean {
-    // check use has user role or not
+    // check If user has user role or not
     if (localStorage.getItem('role') === 'user') {
         return true;
     } else {
@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   isAdmin(): boolean {
-    // check use  has admin role or not
+    // check If user has admin role or not
     if (localStorage.getItem('role') === 'admin') {
         return true;
     } else {
